@@ -25,12 +25,13 @@
         }
 
         nav {
-            display: flex; align-items: center; justify-content: center; /* Centramos el logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 32px 48px;
             border-bottom: 1px solid var(--border);
             background: white;
         }
-
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px; font-weight: 300;
@@ -38,31 +39,154 @@
         }
 
         .hero {
-            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 56px 20px 36px;
+            gap: 10px;
+            text-align: center;
+        }
+        .hero-tag {
+            font-size: 11px; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--muted);
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 300; line-height: 1.1;
+        }
+        .hero h1 em { font-style: italic; color: var(--muted); }
+        .hero p {
+            font-size: 14px; color: var(--muted);
+            max-width: 400px; line-height: 1.7; margin-top: 6px;
+        }
+
+        /* CAROUSEL */
+        .carousel-section { padding: 36px 0 44px; }
+        .carousel-label {
+            text-align: center;
+            font-size: 11px; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--muted);
+            margin-bottom: 24px;
+        }
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .carousel-slide {
+            min-width: 100%;
+            padding: 0 24px;
+        }
+        .slide-inner {
+            aspect-ratio: 16/9;
+            background: #eeebe5;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+        .slide-inner img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute; inset: 0;
+        }
+        .slide-placeholder {
+            display: flex; flex-direction: column;
+            align-items: center; gap: 10px;
+            color: var(--muted);
+        }
+        .slide-placeholder-icon { font-size: 36px; opacity: 0.25; }
+        .slide-placeholder p {
+            font-size: 12px; letter-spacing: 0.1em;
+            text-transform: uppercase; opacity: 0.45;
+        }
+        .slide-caption {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 20px 24px;
+            background: linear-gradient(to top, rgba(26,26,24,0.65) 0%, transparent 100%);
+            color: white;
+        }
+        .caption-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px; font-weight: 300;
+        }
+        .caption-sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
+
+        .carousel-controls {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
+            gap: 20px;
+            margin-top: 18px;
         }
+        .carousel-btn {
+            width: 36px; height: 36px;
+            border: 1px solid var(--border);
+            background: white; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            font-size: 14px; color: var(--text);
+            transition: all 0.2s;
+        }
+        .carousel-btn:hover { background: var(--text); color: white; border-color: var(--text); }
+        .carousel-dots { display: flex; gap: 8px; align-items: center; }
+        .dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: var(--border); cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .dot.active { background: var(--text); transform: scale(1.3); }
 
+        .cta-section {
+            display: flex;
+            justify-content: center;
+            padding: 16px 20px 56px;
+        }
         .btn-principal {
             display: inline-block;
-            padding: 20px 50px;
+            padding: 18px 48px;
             background: var(--text);
             color: var(--bg);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            border-radius: 4px;
+            border-radius: 2px;
             transition: all 0.3s ease;
-            font-weight: 500;
+            font-weight: 400;
         }
+        .btn-principal:hover { background: var(--accent); transform: translateY(-2px); }
 
-        .btn-principal:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        footer {
+            padding: 20px 48px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between;
+            background: white; margin-top: auto;
+        }
+        footer p { font-size: 11px; color: var(--muted); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero { animation: fadeIn 0.5s ease both; }
+        .carousel-section { animation: fadeIn 0.5s ease 0.15s both; }
+        .cta-section { animation: fadeIn 0.5s ease 0.25s both; }
+
+        @media (max-width: 600px) {
+            nav { padding: 24px; }
+            footer { padding: 16px 24px; flex-direction: column; gap: 4px; }
         }
     </style>
 </head>
@@ -72,9 +196,121 @@
     <div class="logo">Entre Trazo</div>
 </nav>
 
-<main class="hero">
-    <a href="cotizacion.html" class="btn-principal">Solicitar Cotización</a>
+<main>
+
+    <section class="hero">
+        <span class="hero-tag">PROYECTOS RESIDENCIALES Y COMERCIALES</span>
+    </section>
+
+    <section class="carousel-section">
+        <p class="carousel-label">PROYECTOS REALIZADOS</p>
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="track">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-slide">
+                    <div class="slide-inner">
+                         <img src="imagenes/Casa_1.jpg" alt="Casal">
+                        <div class="slide-caption">
+                            <p class="caption-title">Casa</p>
+                            <p class="caption-sub"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-slide">
+                    <div class="slide-inner">
+                        <img src="imagenes/Casa_2.jpg" alt="Casal">
+                        <div class="slide-caption">
+                            <p class="caption-title">Casa</p>
+                            <p class="caption-sub"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-slide">
+                    <div class="slide-inner">
+                        <img src="imagenes/Casa_3.jpg" alt="Casal">
+                        <div class="slide-caption">
+                            <p class="caption-title">Casa</p>
+                            <p class="caption-sub"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="carousel-slide">
+                    <div class="slide-inner">
+                        <div class="slide-caption">
+                            <p class="caption-title">Local Comercial</p>
+                            <p class="caption-sub"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <button class="carousel-btn" id="prev">&#8592;</button>
+            <div class="carousel-dots" id="dots"></div>
+            <button class="carousel-btn" id="next">&#8594;</button>
+        </div>
+    </section>
+
+    <div class="cta-section">
+        <a href="cotizacion.html" class="btn-principal">Solicitar Cotización</a>
+    </div>
+
 </main>
+
+<footer>
+    <p>© 2025 Entre Trazo · Guadalajara, Jalisco</p>
+    <p>Todos los derechos reservados</p>
+</footer>
+
+<script>
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dotsContainer = document.getElementById('dots');
+    let current = 0;
+    const total = slides.length;
+    let autoplay;
+
+    slides.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => { goTo(i); resetAutoplay(); });
+        dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        document.querySelectorAll('.dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+        });
+    }
+
+    function resetAutoplay() {
+        clearInterval(autoplay);
+        autoplay = setInterval(() => goTo(current + 1), 10000);
+    }
+
+    document.getElementById('prev').addEventListener('click', () => { goTo(current - 1); resetAutoplay(); });
+    document.getElementById('next').addEventListener('click', () => { goTo(current + 1); resetAutoplay(); });
+
+    autoplay = setInterval(() => goTo(current + 1), 4000);
+
+    let startX = 0;
+    track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) { goTo(current + (diff > 0 ? 1 : -1)); resetAutoplay(); }
+    });
+</script>
 
 </body>
 </html>
