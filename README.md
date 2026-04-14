@@ -1,6 +1,6 @@
 # Entre Trazo — Sistema de Cotizaciones y Citas
 
-![CI](https://github.com/Veloz2/Entre_Trazo/actions/workflows/ci.yml/badge.svg)
+![GitHub Actions](https://github.com/Veloz2/Entre_Trazo/actions/workflows/ci.yml/badge.svg)
 
 ## Resumen ejecutivo
 
@@ -30,7 +30,7 @@ Plataforma web que permite:
 - **CI/CD:** GitHub Actions
 
 ### Diagrama: 
-![Arquitectura de la aplicación](frontend/imagenes/Diagrama_EntreTrazo.png)
+![Arquitectura de la aplicación](/target/classes/static/imagenes/Diagrama_EntreTrazo.png)
 
 ---
 
