@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel — Entre Trazo</title>
+</head>
+<body>
+    <h1>Panel Administrativo — Entre Trazo</h1>
+    <p><a href="/admin/logout">Cerrar sesión</a></p>
+
+    <h2>Solicitudes</h2>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Tipo</th>
+            <th>Fecha preferida</th>
+            <th>Estado</th>
+            <th>Acción</th>
+        </tr>
+        <tr th:each="s : ${solicitudes}">
+            <td th:text="${s.id}"></td>
+            <td th:text="${s.nombre}"></td>
+            <td th:text="${s.email}"></td>
+            <td th:text="${s.tipo}"></td>
+            <td th:text="${s.fechaPreferida}"></td>
+            <td th:text="${s.estado}"></td>
+            <td>
+                <form th:action="@{/admin/solicitudes/{id}/estado(id=${s.id})}" method="post">
+                    <select name="estado">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="atendido">Atendido</option>
+                        <option value="cancelado">Cancelado</option>
+                    </select>
+                    <button type="submit">Actualizar</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

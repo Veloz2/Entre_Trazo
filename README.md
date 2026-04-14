@@ -27,7 +27,7 @@ Plataforma web que permite:
 - **Infraestructura:** Railway / Render
 - **CI/CD:** GitHub Actions
 
-## Diagrama: 
+### Diagrama: 
 ![Arquitectura de la aplicación](frontend/imagenes/Diagrama_EntreTrazo.png)
 
 ---
@@ -79,9 +79,9 @@ Crea un archivo `.env` basado en `.env.example`:
 ```
 DB_URL=jdbc:mysql://localhost:3306/entretrazo
 DB_USER=root
-DB_PASSWORD=tu_password
-MAIL_USER=tucorreo@gmail.com
-MAIL_PASSWORD=tu_app_password
+DB_PASSWORD=password
+MAIL_USER=correo@entretrazo.com
+MAIL_PASSWORD=password
 ```
 
 ### Instalar dependencias
@@ -217,7 +217,6 @@ git push origin feature/nombre-cambio
 - [ ] Panel de métricas y reportes
 - [ ] Exportación avanzada de reportes
 - [ ] CI/CD con GitHub Actions
-- [ ] Autenticación con sesión segura (BCrypt)
 - [ ] Cobertura de pruebas > 80%
 - [ ] Galería de proyectos / renders
 - [ ] Soporte para adjuntos en formulario

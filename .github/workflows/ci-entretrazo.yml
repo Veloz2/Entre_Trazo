@@ -1,0 +1,28 @@
+name: CI - Entre Trazo
+
+on:
+  push:
+    branches: [ developer, master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Dar permisos de ejecución al wrapper
+        run: chmod +x mvnw
+
+      - name: Ejecutar pruebas JUnit
+        run: ./mvnw test
