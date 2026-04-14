@@ -27,7 +27,7 @@ Plataforma web que permite:
 - **Infraestructura:** Railway / Render
 - **CI/CD:** GitHub Actions
 
-## Diagrama: 
+### Diagrama: 
 ![Arquitectura de la aplicación](frontend/imagenes/Diagrama_EntreTrazo.png)
 
 ---
