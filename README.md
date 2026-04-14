@@ -48,7 +48,7 @@ Plataforma web que permite:
 ### Infraestructura
 - Servidor de aplicación: Spring Boot (embebido Tomcat)
 - Servidor web: no aplica (archivos estáticos servidos por Spring Boot)
-- Base de datos: MySQL 8.0
+- Base de datos: MySQL 8.0 / H2database
 - Sistema operativo recomendado: Ubuntu / Windows / macOS
 
 ### Software y dependencias
@@ -83,6 +83,21 @@ DB_PASSWORD=password
 MAIL_USER=correo@entretrazo.com
 MAIL_PASSWORD=password
 ```
+### Opcion sin MySQL
+Si no tienes MySQL instalado, usa H2 (integrado en Spring boot) agregando esto en `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:h2:mem:entretrazo
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.h2.console.enabled=true
+spring.jpa.defer-datasource-initialization=true
+spring.sql.init.mode=always
+
+```
+Consola H2 disponible en: http://localhost:8080/h2-console
 
 ### Instalar dependencias
 ```bash
