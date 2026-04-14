@@ -1,5 +1,7 @@
 # Entre Trazo — Sistema de Cotizaciones y Citas
 
+![CI](https://github.com/Veloz2/Entre_Trazo/actions/workflows/ci.yml/badge.svg)
+
 ## Resumen ejecutivo
 
 ### Descripción
