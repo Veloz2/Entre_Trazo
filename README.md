@@ -170,6 +170,7 @@ java -jar target/entretrazo-0.0.1-SNAPSHOT.jar
 1. Conectar el repositorio de GitHub
 2. Configurar variables de entorno en el dashboard
 3. El despliegue ocurre automáticamente en cada push a `master`
+- Lik de prueba: entretrazo-production.up.railway.app 
 
 ---
 
