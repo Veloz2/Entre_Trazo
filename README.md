@@ -238,7 +238,12 @@ git push origin feature/nombre-cambio
 
 ---
 
-**Proyecto integrador — Tecmilenio 2025**  
+**Imagenes usadadas:**
+- Casa 1: <a href="https://www.freepik.es/imagen-ia-gratis/renderizacion-3d-modelo-casa_66623731.htm#fromView=search&page=1&position=0&uuid=c62d513c-da5b-49f9-b662-18846a4d1084&query=Renders+casa?log-in=google">Imagen de freepik</a>
+
+- Casa 2: <a href="https://www.freepik.es/imagen-ia-gratis/renderizacion-3d-modelo-casa_66603739.htm">Imagen de freepik</a>
+
+**Proyecto integrador — TecMilenio 2026**  
 Desarrollado por: Jose Daniel Diaz Veloz  
 Empresa: Entre Trazo (constructora familiar)  
 Stack: Java Spring Boot · MySQL · HTML/CSS/JS
